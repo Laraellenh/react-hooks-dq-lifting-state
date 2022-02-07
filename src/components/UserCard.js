@@ -1,6 +1,12 @@
 import React from "react";
 
 function UserCard(props) {
+ function handleClick(){
+  //  props is an ob that contains an obj and our function handleUser
+   props.handleUserClick(props.id)
+ }
+
+ 
   return (
     <div className="card">
       <div className="content">
@@ -12,13 +18,14 @@ function UserCard(props) {
         <div className="header">{props.handle}</div>
         <div className="description">{props.description}</div>
       </div>
-      <div
-        onClick={() => props.handleUserClick(props.id)}
+      <button
+        onClick ={handleClick}
+        
         className="ui bottom attached button"
       >
         <i className="add icon"></i>
         View Tweets
-      </div>
+      </button>
     </div>
   );
 }
