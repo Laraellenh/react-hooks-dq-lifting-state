@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 function TweetItem(props) {
+function handleLike(){
+  props.handleTweetLikes(props.tweet)
+}
   return (
     <div className="event">
       <div className="label">
@@ -14,7 +17,7 @@ function TweetItem(props) {
         <div className="extra text">{props.tweet.text}</div>
         <div className="meta">
           <button
-            onClick={() => console.log("%ca tweet was liked", "color: red")}
+            onClick= {handleLike}
             className="ui tiny basic labeled icon like button"
           >
             <i className="like icon"></i> {props.tweet.favorite_count} Likes
